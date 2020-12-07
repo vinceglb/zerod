@@ -1,18 +1,18 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import { GetServerSideProps, NextPage } from "next";
+import Head from 'next/head'
+import styles from '../styles/Home.module.css'
+import { GetServerSideProps, NextPage } from 'next'
 
 interface Props {
   launch: {
-    mission: string;
-    site: string;
-    timestamp: number;
-    rocket: string;
-  };
+    mission: string
+    site: string
+    timestamp: number
+    rocket: string
+  }
 }
 
 const IndexPage: NextPage<Props> = ({ launch }) => {
-  const date = new Date(launch.timestamp);
+  const date = new Date(launch.timestamp)
 
   return (
     <div className={styles.container}>
@@ -27,14 +27,12 @@ const IndexPage: NextPage<Props> = ({ launch }) => {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
+          Get started by editing <code className={styles.code}>pages/index.js</code>
         </p>
 
         <h1>Next SpaceX Launch: {launch.mission}</h1>
         <p>
-          {launch.rocket} will take off from {launch.site} on{" "}
-          {date.toDateString()}
+          {launch.rocket} will take off from {launch.site} on {date.toDateString()}
         </p>
 
         <div className={styles.grid}>
@@ -48,10 +46,7 @@ const IndexPage: NextPage<Props> = ({ launch }) => {
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
+          <a href="https://github.com/vercel/next.js/tree/master/examples" className={styles.card}>
             <h3>Examples &rarr;</h3>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
@@ -61,9 +56,7 @@ const IndexPage: NextPage<Props> = ({ launch }) => {
             className={styles.card}
           >
             <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
           </a>
         </div>
       </main>
@@ -74,19 +67,18 @@ const IndexPage: NextPage<Props> = ({ launch }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          Powered by <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const response = await fetch("https://api.spacexdata.com/v3/launches/next");
-  const nextLaunch = await response.json();
+  const response = await fetch('https://api.spacexdata.com/v3/launches/next')
+  const nextLaunch = await response.json()
   return {
     props: {
       launch: {
@@ -96,5 +88,5 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
         rocket: nextLaunch.rocket.rocket_name,
       },
     },
-  };
-};
+  }
+}
