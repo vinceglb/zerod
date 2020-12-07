@@ -58,6 +58,9 @@ const IndexPage: NextPage<Props> = ({ launch }) => {
             <h3>Deploy &rarr;</h3>
             <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
           </a>
+
+          <button className="bg-primary">Je suis un bouton primaire</button>
+          <button className="bg-secondary">Je suis un bouton primaire</button>
         </div>
       </main>
 
