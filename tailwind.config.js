@@ -2,11 +2,11 @@ module.exports = {
   purge: ['./pages/**/*.ts', './components/**/*.ts'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
-    colors: {
-      primary: '#5c6ac4',
-      secondary: '#ecc94b',
-      // ...
+    extend: {
+      colors: {
+        primary: '#FD4A1E',
+        secondary: '#FFE0D8',
+      },
     },
   },
   variants: {
