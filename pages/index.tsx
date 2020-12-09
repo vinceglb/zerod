@@ -22,7 +22,7 @@ const IndexPage: NextPage<Props> = ({ launch }) => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <h1 className={`${styles.title} pb-6`}>
           Welcome to <a href="https://nextjs.org">Zerod</a> 🎉
         </h1>
 
