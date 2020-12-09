@@ -13,7 +13,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "autoprefixer": "^10.0.4",
+    "autoprefixer": "^10.1.0",
     "next": "10.0.3",
     "postcss": "^8.1.14",
     "react": "17.0.1",
