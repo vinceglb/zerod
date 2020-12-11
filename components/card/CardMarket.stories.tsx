@@ -1,14 +1,14 @@
 import React, { ComponentProps } from 'react'
 import { Story } from '@storybook/react/types-6-0'
 
-import { Card } from './Card'
+import { CardMarket } from './CardMarket'
 
 export default {
-  title: 'Card',
-  component: Card,
+  title: 'CardMarket',
+  component: CardMarket,
 }
 
-const Template: Story<ComponentProps<typeof Card>> = (args) => <Card {...args} />
+const Template: Story<ComponentProps<typeof CardMarket>> = (args) => <CardMarket {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
