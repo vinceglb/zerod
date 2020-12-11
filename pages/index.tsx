@@ -19,7 +19,7 @@ const IndexPage: NextPage<Props> = observer(({ launch }) => {
   const { userStore } = useStores()
   const user = userStore.user
 
-  const onClick = () => {
+  const onClick = (): void => {
     userStore.setUser({
       name: 'VinceBg',
     })
