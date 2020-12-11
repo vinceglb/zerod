@@ -1,9 +1,11 @@
 import { CardPref } from '../card/CardPref'
 // import styles from './sectionpref.module.css'
 
-export interface SectionPrefProps {}
+export interface SectionPrefProps {
+  className?: string | undefined
+}
 
-export const SectionPref: React.FC<SectionPrefProps> = () => {
+export const SectionPref: React.FC<SectionPrefProps> = (props) => {
   const categories = [
     {
       title: 'Équilibré',
@@ -33,7 +35,7 @@ export const SectionPref: React.FC<SectionPrefProps> = () => {
   ]
 
   return (
-    <div>
+    <section className={props.className}>
       <div className="flex justify-between items-center">
         <div>
           <h1 className="font-bold text-reddish-brown text-4xl">Au menu du jour ?</h1>
@@ -50,6 +52,6 @@ export const SectionPref: React.FC<SectionPrefProps> = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
