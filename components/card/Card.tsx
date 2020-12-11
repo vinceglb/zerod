@@ -5,7 +5,7 @@ export interface CardProps {
 }
 
 export const Card: React.FC<CardProps> = () => (
-  <div className="bg-white rounded-xl shadow-md max-w-md p-4 m-6">
+  <div className="bg-white rounded-xl shadow-md w-96 p-4">
     <div>
       <img
         className="rounded-lg"
