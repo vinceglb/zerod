@@ -1,29 +1,29 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Link from 'next/link'
 import { GetServerSideProps, NextPage } from 'next'
-import { useStores } from '../models'
 import { observer } from 'mobx-react-lite'
+import { SectionPref } from '../components/section/SectionPref'
+import { SectionMarket } from '../components/section/SectionMarket'
 
 interface Props {
-  launch: {
-    mission: string
-    site: string
-    timestamp: number
-    rocket: string
-  }
+  // launch: {
+  //   mission: string
+  //   site: string
+  //   timestamp: number
+  //   rocket: string
+  // }
 }
 
-const IndexPage: NextPage<Props> = observer(({ launch }) => {
-  const date = new Date(launch.timestamp)
-  const { userStore } = useStores()
-  const user = userStore.user
+const IndexPage: NextPage<Props> = observer((/*{ launch }*/) => {
+  // const date = new Date(launch.timestamp)
+  // const { userStore } = useStores()
+  // const user = userStore.user
 
-  const onClick = (): void => {
-    userStore.setUser({
-      name: 'VinceBg',
-    })
-  }
+  // const onClick = (): void => {
+  //   userStore.setUser({
+  //     name: 'VinceBg',
+  //   })
+  // }
 
   return (
     <div className={styles.container}>
@@ -33,7 +33,7 @@ const IndexPage: NextPage<Props> = observer(({ launch }) => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={`${styles.title} pb-6`}>
+        {/* <h1 className={`${styles.title} pb-6`}>
           Welcome to <a href="https://nextjs.org">Zerod</a> 🎉
         </h1>
 
@@ -52,7 +52,10 @@ const IndexPage: NextPage<Props> = observer(({ launch }) => {
             Je suis un bouton primaire
           </button>
           <Link href="/test">Vers test</Link>
-        </div>
+        </div> */}
+
+        <SectionMarket className="mb-20" />
+        <SectionPref />
       </main>
 
       <footer className={styles.footer}>
