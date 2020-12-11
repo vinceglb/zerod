@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 import { GetServerSideProps, NextPage } from 'next'
+import { useStores } from '../models'
+import { observer } from 'mobx-react-lite'
 
 interface Props {
   launch: {
@@ -11,8 +14,16 @@ interface Props {
   }
 }
 
-const IndexPage: NextPage<Props> = ({ launch }) => {
+const IndexPage: NextPage<Props> = observer(({ launch }) => {
   const date = new Date(launch.timestamp)
+  const { userStore } = useStores()
+  const user = userStore.user
+
+  const onClick = () => {
+    userStore.setUser({
+      name: 'VinceBg',
+    })
+  }
 
   return (
     <div className={styles.container}>
@@ -35,32 +46,12 @@ const IndexPage: NextPage<Props> = ({ launch }) => {
           {launch.rocket} will take off from {launch.site} on {date.toDateString()}
         </p>
 
+        <div>User : {user?.name}</div>
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a href="https://github.com/vercel/next.js/tree/master/examples" className={styles.card}>
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-
-          <button className="bg-primary">Je suis un bouton primaire</button>
-          <button className="bg-secondary">Je suis un bouton primaire</button>
+          <button className="bg-primary" onClick={onClick}>
+            Je suis un bouton primaire
+          </button>
+          <Link href="/test">Vers test</Link>
         </div>
       </main>
 
@@ -75,7 +66,7 @@ const IndexPage: NextPage<Props> = ({ launch }) => {
       </footer>
     </div>
   )
-}
+})
 
 export default IndexPage
 

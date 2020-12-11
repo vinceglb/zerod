@@ -40,6 +40,8 @@ module.exports = {
         // Why would you want unused vars?
         '@typescript-eslint/no-unused-vars': ['error'],
 
+        "@typescript-eslint/no-empty-interface": 0,
+
         // I suggest this setting for requiring return types on functions only where useful
         '@typescript-eslint/explicit-function-return-type': [
           'warn',
