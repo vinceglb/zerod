@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { RootStoreProvider } from '../models/root-store/root-store-context'
 import { RootStore, setupRootStore } from '../models'
+import { AppBar } from '../components/appbar/AppBar'
 
 // fonts
 require('typeface-poppins')
@@ -27,6 +28,7 @@ const App: Component<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <RootStoreProvider value={rootStore}>
+      <AppBar />
       <Component {...pageProps} />
     </RootStoreProvider>
   )
