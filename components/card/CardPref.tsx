@@ -14,6 +14,6 @@ export const CardPref: React.FC<CardPrefProps> = ({
 }) => (
   <div className={`pt-4 w-52 flex flex-col items-center ${customClasses}`}>
     <img className="rounded-lg shadow-lg h-52 w-52 object-cover" src={photoUrl} alt={title} />
-    <h2 className="font-bold text-gray-800 text-2xl mt-4">{title}</h2>
+    <h2 className="font-bold text-gray-800 text-xl mt-4">{title}</h2>
   </div>
 )
