@@ -4,6 +4,9 @@ import type { AppProps } from 'next/app'
 import { RootStoreProvider } from '../models/root-store/root-store-context'
 import { RootStore, setupRootStore } from '../models'
 
+// fonts
+require('typeface-poppins')
+
 const App: Component<AppProps> = ({ Component, pageProps }) => {
   const [rootStore, setRootStore] = useState<RootStore | undefined>(undefined)
   const [initializing, setInitializing] = useState(true)
