@@ -1,5 +1,3 @@
-import React from 'react'
-
 export interface ButtonProps {
   className?: string | undefined
   onClick?: (event: React.MouseEvent) => void | undefined
