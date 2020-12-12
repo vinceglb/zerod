@@ -65,7 +65,8 @@ const IndexPage: NextPage<Props> = observer((/*{ launch }*/) => {
                     placeholder="Saisissez votre adresse"
                   />
                 </div>
-                <Button className="py-5">Rechercher</Button>
+                {/* Le -mr et le -my sont pour éviter des glitchs avec la bordure */}
+                <Button className="py-5  -mr-px -my-px">Rechercher</Button>
               </div>
             </div>
           </div>
