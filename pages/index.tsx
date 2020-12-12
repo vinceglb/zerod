@@ -5,6 +5,9 @@ import { NextPage } from 'next'
 import { observer } from 'mobx-react-lite'
 import { SectionPref } from '../components/section/SectionPref'
 import { SectionMarket } from '../components/section/SectionMarket'
+import { mdiMapMarker } from '@mdi/js'
+import Icon from '@mdi/react'
+import { Button } from '../components/button/Button'
 
 interface Props {
   // launch: {
@@ -52,8 +55,18 @@ const IndexPage: NextPage<Props> = observer((/*{ launch }*/) => {
             >
               <p className="font-medium text-sm text-light-grey">
                 Entrez votre adresse pour trouver les commerces à proximité
-                <div className="bg-red-300 w-full h-20 mt-4" />
               </p>
+              <div className="bg-light-secondary border-primary border-2 rounded-full flex flex-row items-center">
+                <div className="px-8 flex flex-row flex-grow">
+                  <Icon path={mdiMapMarker} size="1.75rem" className="text-transparent-primary" />
+                  <input
+                    type="text"
+                    className="bg-light-secondary placeholder-transparent-primary w-full focus:outline-none font-medium text-lg"
+                    placeholder="Saisissez votre adresse"
+                  />
+                </div>
+                <Button className="py-5">Rechercher</Button>
+              </div>
             </div>
           </div>
 
