@@ -22,8 +22,14 @@ module.exports = {
       spacing: {
         '120': '50rem'
       },
+      width: {
+        '150': '40rem',
+      },
+      height: {
+        '4/5-screen': '80vh',
+      },
       maxHeight: {
-        "1/2-screen": '50vh'
+        '1/2-screen': '50vh',
       }
     },
   },
