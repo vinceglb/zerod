@@ -1,13 +1,14 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import styleIndex from './index.module.css'
-import { NextPage } from 'next'
 import { observer } from 'mobx-react-lite'
 import { SectionPref } from '../components/section/SectionPref'
 import { SectionMarket } from '../components/section/SectionMarket'
 import { mdiMapMarker } from '@mdi/js'
 import Icon from '@mdi/react'
 import { Button } from '../components/button/Button'
+import { BobPage } from '../utils/layout-types-next'
+import { DefaultLayout } from '../layouts/default'
 
 interface Props {
   // launch: {
@@ -18,7 +19,7 @@ interface Props {
   // }
 }
 
-const IndexPage: NextPage<Props> = observer((/*{ launch }*/) => {
+const IndexPage: BobPage<Props> = observer((/*{ launch }*/) => {
   // const date = new Date(launch.timestamp)
   // const { userStore } = useStores()
   // const user = userStore.user
@@ -98,5 +99,7 @@ const IndexPage: NextPage<Props> = observer((/*{ launch }*/) => {
     </div>
   )
 })
+
+IndexPage.Layout = DefaultLayout
 
 export default IndexPage

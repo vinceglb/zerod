@@ -4,7 +4,6 @@ import { mdiCartOutline } from '@mdi/js'
 import Icon from '@mdi/react'
 import { observer } from 'mobx-react-lite'
 import { useStores } from '../../models'
-import Link from 'next/link'
 import { Button } from '../button/Button'
 import { CartItem } from './CartItem'
 import styles from './CartMenu.module.css'
@@ -75,16 +74,25 @@ export const CartMenu: React.FC<CartMenu> = observer(({ className }) => {
         </div>
 
         <div className="flex flex-row items-center justify-between mt-5">
-          <Link href="/cart">
-            <div className="whitespace-nowrap cursor-pointer text-sm font-semibold text-light-grey px-2">
-              Voir le panier
-            </div>
-          </Link>
-          <Link href="/checkout">
-            <Button small className="h-10 w-52">
-              Commander
-            </Button>
-          </Link>
+          <button
+            className="whitespace-nowrap cursor-pointer text-sm font-semibold text-light-grey px-2 focus:outline-none"
+            onClick={() => {
+              router.push('/cart')
+              setDropDownMenuOpen(false)
+            }}
+          >
+            Voir le panier
+          </button>
+          <Button
+            small
+            className="h-10 w-52"
+            onClick={() => {
+              router.push('/checkout')
+              setDropDownMenuOpen(false)
+            }}
+          >
+            Commander
+          </Button>
         </div>
       </div>
     </div>

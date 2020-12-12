@@ -1,16 +1,24 @@
 import React, { useState, FC as Component, useEffect } from 'react'
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
 import { RootStoreProvider } from '../models/root-store/root-store-context'
 import { RootStore, setupRootStore } from '../models'
-import { AppBar } from '../components/appbar/AppBar'
+import { BobAppProps } from '../utils/layout-types-next'
+import { DefaultLayout } from '../layouts/default'
 
 // fonts
 require('typeface-poppins')
 
-const App: Component<AppProps> = ({ Component, pageProps }) => {
+const App: Component<BobAppProps> = ({ Component, pageProps }) => {
   const [rootStore, setRootStore] = useState<RootStore | undefined>(undefined)
   const [initializing, setInitializing] = useState(true)
+
+  let Layout = Component.Layout
+
+  if (Component.Layout === undefined) Layout = DefaultLayout
+  else if (Component.Layout === null) Layout = React.Fragment
+
+  // OUUUH LA BELLE GITANERIIIIE
+  Layout = Layout as React.FC | React.ExoticComponent
 
   // Kick off initial async loading actions, like loading fonts and RootStore
   useEffect(() => {
@@ -25,11 +33,13 @@ const App: Component<AppProps> = ({ Component, pageProps }) => {
     // return <LoadingScreen />
     return <div>ca charge</div>
   }
-
+  console.log(Component)
+  console.log(pageProps)
   return (
     <RootStoreProvider value={rootStore}>
-      <AppBar />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </RootStoreProvider>
   )
 }
