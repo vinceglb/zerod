@@ -7,9 +7,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#FD4A1E',
+        'primary': '#FD4A1E',
         'transparent-primary' : '#FD4A1E6B',
-        secondary: '#FFE0D8',
+        'secondary': '#FFE0D8',
         'light-secondary': '#FFFAF6',
         'dark-grey': '#2C2B26',
         'light-grey': '#666666',
@@ -18,6 +18,9 @@ module.exports = {
         'green': '#1DBF78',
         'light-transparent': '#F0F0F033'
       },
+      spacing: {
+        '120': '50rem'
+      }
     },
   },
   variants: {

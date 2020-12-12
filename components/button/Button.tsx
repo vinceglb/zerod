@@ -17,7 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
   <button
     className={`
       ${!text && 'bg-primary'}
-      ${small ? 'py-1 px-5 text-md' : 'py-3 px-11 text-2xl'}
+      ${small ? 'py-2 px-6' : 'py-3 px-11 text-2xl'}
       rounded-full
       ${customClasses}
     `}

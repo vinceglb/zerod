@@ -3,11 +3,7 @@ import styles from '../styles/Home.module.css'
 import styleIndex from './index.module.css'
 import { NextPage } from 'next'
 import { observer } from 'mobx-react-lite'
-import { SectionPref } from '../components/section/SectionPref'
-import { SectionMarket } from '../components/section/SectionMarket'
-import { mdiMapMarker } from '@mdi/js'
-import Icon from '@mdi/react'
-import { Button } from '../components/button/Button'
+import Image from 'next/image'
 
 interface Props {
   // launch: {
@@ -30,15 +26,17 @@ const IndexPage: NextPage<Props> = observer((/*{ launch }*/) => {
   // }
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <div className={`bg-light-secondary flex ${styleIndex.head}`}>
-          <div className="w-full text-center flex flex-col justify-center items-center">
+        {/* Header */}
+        <section className={`bg-light-secondary flex flex-col ${styleIndex.head}`}>
+          {/* Partie textes */}
+          <div className="w-full md:w-2/3 2xl:w-3/5 flex flex-col text-center justify-center items-center">
             <h1 className="font-bold text-5xl text-reddish-brown leading-snug mb-8">
               Soutenez vos commerces
               <br />
@@ -50,38 +48,25 @@ const IndexPage: NextPage<Props> = observer((/*{ launch }*/) => {
               quartier disponibles en click and collect
             </p>
 
-            <div
-              className={`bg-white w-96 h-48 rounded-3xl text-left p-8 mt-20 ${styleIndex.cardSearch}`}
-            >
-              <p className="font-medium text-sm text-light-grey">
-                Entrez votre adresse pour trouver les commerces à proximité
-              </p>
-              <div className="bg-light-secondary border-primary border-2 rounded-full flex flex-row items-center">
-                <div className="px-8 flex flex-row flex-grow">
-                  <Icon path={mdiMapMarker} size="1.75rem" className="text-transparent-primary" />
-                  <input
-                    type="text"
-                    className="bg-light-secondary placeholder-transparent-primary w-full focus:outline-none font-medium text-lg"
-                    placeholder="Saisissez votre adresse"
-                  />
-                </div>
-                {/* Le -mr et le -my sont pour éviter des glitchs avec la bordure */}
-                <Button className="py-5  -mr-px -my-px">Rechercher</Button>
-              </div>
-            </div>
+            {/* <SearchIndex className="w-4/5 2xl:w-120" /> */}
           </div>
+          {/* Partie image */}
+          <div className="w-full md:w-1/3 2xl:w-2/5 relative">
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src="/images/jimmy-dean-4ngFvOjh4TI-unsplash.jpg"
+              alt="todo"
+              priority
+            />
+          </div>
+        </section>
 
-          <img
-            className="object-cover w-1/2"
-            src="/images/jimmy-dean-4ngFvOjh4TI-unsplash.jpg"
-            alt="todo"
-          />
-        </div>
-
+        {/* Sections */}
         <div className="flex flex-col justify-center items-center mt-10">
           <div>
-            <SectionMarket className="mb-20" />
-            <SectionPref className="mb-20" />
+            {/* <SectionMarket className="mb-20" /> */}
+            {/* <SectionPref className="mb-20" /> */}
           </div>
         </div>
       </main>

@@ -1,4 +1,5 @@
 import { CardPref } from '../card/CardPref'
+import stylesHelper from './helper.module.css'
 // import styles from './sectionpref.module.css'
 
 export interface SectionPrefProps {
@@ -36,19 +37,27 @@ export const SectionPref: React.FC<SectionPrefProps> = (props) => {
 
   return (
     <section className={props.className}>
-      <div className="flex justify-between items-center">
-        <div>
-          <h1 className="font-bold text-reddish-brown text-4xl">Au menu du jour ?</h1>
-          <p className="text-light-grey mt-2">Des catégories pour tous les goûts</p>
+      {/* Partie header */}
+      <div className="flex justify-between items-center ">
+        <div className="ml-6">
+          <h1 className="font-bold text-reddish-brown text-2xl">Au menu du jour ?</h1>
+          <p className="text-light-grey">Des catégories pour tous les goûts</p>
         </div>
-        <div>
+        {/* <div>
           <p className="font-semibold text-primary">Tout afficher</p>
-        </div>
+        </div> */}
       </div>
+
+      {/* Partie liste */}
       <div className="max-w-full flex overflow-auto mt-4">
-        <div className="flex space-x-16">
+        <div className="flex space-x-4">
           {categories.map((cat) => (
-            <CardPref key={cat.title} title={cat.title} photoUrl={cat.photoUrl} />
+            <CardPref
+              key={cat.title}
+              title={cat.title}
+              photoUrl={cat.photoUrl}
+              className={stylesHelper.container}
+            />
           ))}
         </div>
       </div>

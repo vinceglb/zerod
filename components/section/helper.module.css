@@ -1,0 +1,7 @@
+.container:first-child {
+  @apply ml-6;
+}
+
+.container:last-child {
+  @apply mr-6 !important;
+}
