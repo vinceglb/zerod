@@ -1,5 +1,5 @@
 import { Instance, SnapshotOut, types } from 'mobx-state-tree'
-import { User, UserModel } from '../user/user'
+import { User, UserModel } from './user'
 
 /**
  * Model description here for TypeScript hints.

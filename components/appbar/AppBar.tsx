@@ -1,16 +1,9 @@
 import { FunctionComponent as Component, useState } from 'react'
 import Icon from '@mdi/react'
-import {
-  mdiCartOutline,
-  mdiAccountOutline,
-  mdiMenu,
-  mdiClose,
-  mdiFacebook,
-  mdiInstagram,
-} from '@mdi/js'
+import { mdiAccountOutline, mdiMenu, mdiClose, mdiFacebook, mdiInstagram } from '@mdi/js'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { useOuterClick } from '../../utils/useOuterClick'
+import { CartMenu } from './CartMenu'
 
 const routes = [
   {
@@ -32,14 +25,8 @@ const routes = [
 ]
 
 export const AppBar: Component = () => {
-  const [dropDownMenuOpen, setDropDownMenuOpen] = useState(false)
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false)
   const router = useRouter()
-
-  const onClickOutsideCartDropdown = (): void => {
-    if (dropDownMenuOpen) setDropDownMenuOpen(false)
-  }
-  const dropdownRef = useOuterClick(onClickOutsideCartDropdown)
 
   return (
     <>
@@ -89,53 +76,7 @@ export const AppBar: Component = () => {
                 </button>
 
                 {/* Dropdown Cart */}
-                <div className="md:ml-6 lg:ml-10 relative">
-                  <div>
-                    <button
-                      className="max-w-xs bg-secondary text-primary rounded-full flex items-center text-sm p-3 hover:bg-primary hover:text-secondary transition focus:outline-none"
-                      id="user-menu"
-                      aria-haspopup="true"
-                      onClick={() => setDropDownMenuOpen(!dropDownMenuOpen)}
-                    >
-                      <span className="sr-only">Voir le panier</span>
-                      <Icon path={mdiCartOutline} size="1.5rem" />
-                    </button>
-                  </div>
-
-                  {dropDownMenuOpen && (
-                    <div
-                      className={`origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 transition ease-out duration-100`}
-                      role="menu"
-                      aria-orientation="vertical"
-                      aria-labelledby="user-menu"
-                      ref={dropdownRef}
-                    >
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        role="menuitem"
-                      >
-                        Your Profile
-                      </a>
-
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        role="menuitem"
-                      >
-                        Settings
-                      </a>
-
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        role="menuitem"
-                      >
-                        Sign out
-                      </a>
-                    </div>
-                  )}
-                </div>
+                <CartMenu className="md:ml-6 lg:ml-10" />
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import { Instance, SnapshotOut, types } from 'mobx-state-tree'
 
-export const UserModel = types.model({
+export const UserModel = types.model('User').props({
   name: '',
 })
 
