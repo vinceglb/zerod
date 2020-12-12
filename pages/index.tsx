@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import styleIndex from './index.module.css'
 import { NextPage } from 'next'
 import { observer } from 'mobx-react-lite'
 import { SectionPref } from '../components/section/SectionPref'
@@ -32,30 +33,43 @@ const IndexPage: NextPage<Props> = observer((/*{ launch }*/) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        {/* <h1 className={`${styles.title} pb-6`}>
-          Welcome to <a href="https://nextjs.org">Zerod</a> 🎉
-        </h1>
+      <main>
+        <div className={`bg-light-secondary flex ${styleIndex.head}`}>
+          <div className="w-full text-center flex flex-col justify-center items-center">
+            <h1 className="font-bold text-5xl text-reddish-brown leading-snug mb-8">
+              Soutenez vos commerces
+              <br />
+              de proximité préféres
+            </h1>
+            <p className="text-xl font-medium text-light-grey">
+              Tous les commerces de bouche de votre
+              <br />
+              quartier disponibles en click and collect
+            </p>
 
-        <p className={styles.description}>
-          Get started by editing <code className={styles.code}>pages/index.js</code>
-        </p>
+            <div
+              className={`bg-white w-96 h-48 rounded-3xl text-left p-8 mt-20 ${styleIndex.cardSearch}`}
+            >
+              <p className="font-medium text-sm text-light-grey">
+                Entrez votre adresse pour trouver les commerces à proximité
+                <div className="bg-red-300 w-full h-20 mt-4" />
+              </p>
+            </div>
+          </div>
 
-        <h1>Next SpaceX Launch: {launch.mission}</h1>
-        <p>
-          {launch.rocket} will take off from {launch.site} on {date.toDateString()}
-        </p>
+          <img
+            className="object-cover w-1/2"
+            src="/images/jimmy-dean-4ngFvOjh4TI-unsplash.jpg"
+            alt="todo"
+          />
+        </div>
 
-        <div>User : {user?.name}</div>
-        <div className={styles.grid}>
-          <button className="bg-primary" onClick={onClick}>
-            Je suis un bouton primaire
-          </button>
-          <Link href="/test">Vers test</Link>
-        </div> */}
-
-        <SectionMarket className="mb-20" />
-        <SectionPref />
+        <div className="flex flex-col justify-center items-center mt-10">
+          <div>
+            <SectionMarket className="mb-20" />
+            <SectionPref className="mb-20" />
+          </div>
+        </div>
       </main>
 
       <footer className={styles.footer}>

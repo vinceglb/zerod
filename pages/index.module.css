@@ -1,0 +1,11 @@
+.head {
+  height: 80vh;
+}
+
+.head img {
+  border-bottom-left-radius: 5rem;
+}
+
+.cardSearch {
+  width: 50rem;
+}
