@@ -24,6 +24,8 @@ module.exports = {
       },
       width: {
         '150': '40rem',
+        '200': '70rem',
+        'lg': '1024px'
       },
       height: {
         '4/5-screen': '80vh',

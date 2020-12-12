@@ -8,7 +8,7 @@ interface IndexProps {}
 const IndexPage: BobPage<IndexProps> = () => (
   <div>
     <IndexHeader />
-    <div className="my-8">
+    <div className="my-8 lg:w-lg mx-auto">
       <SectionMarket />
       <SectionPref className="mt-16" />
     </div>

@@ -30,7 +30,7 @@ export const SectionMarket: React.FC<SectionPrefProps> = (props) => {
   return (
     <section className={props.className}>
       <div className="max-w-full flex overflow-auto py-2">
-        <div className="flex space-x-8">
+        <div className="flex space-x-8 lg:space-x-0 lg:w-full lg:justify-between">
           {markets.map((m) => (
             <CardMarket
               key={m.title}

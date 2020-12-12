@@ -5,8 +5,8 @@ import { IndexSearch } from './IndexSearch'
 interface IndexHeader {}
 
 export const IndexHeader: NextPage<IndexHeader> = () => (
-  <div className="flex flex-col md:flex-row md:h-4/5-screen px-6 md:px-0 items-center bg-light-secondary">
-    <div className="w-full md:px-6">
+  <div className="flex flex-col lg:flex-row lg:h-4/5-screen px-6 lg:px-0 items-center bg-light-secondary">
+    <div className="w-full lg:px-6">
       <div className="m-auto xl:w-150">
         {/* Partie textes */}
         <div className="py-16 text-center">
@@ -24,15 +24,15 @@ export const IndexHeader: NextPage<IndexHeader> = () => (
     </div>
 
     {/* Partie image */}
-    <div className="w-full my-16 md:my-0 md:h-full">
-      <div className="h-72 md:h-full relative">
+    <div className="w-full mt-16 mb-8 lg:my-0 lg:h-full">
+      <div className="h-72 lg:h-full relative">
         <Image
           src="/images/jimmy-dean-4ngFvOjh4TI-unsplash.jpg"
           alt="todo"
           priority={true}
           layout="fill"
           objectFit="cover"
-          className="rounded-3xl md:rounded-none md:rounded-bl-3xl"
+          className="rounded-3xl lg:rounded-none lg:rounded-bl-3xl"
         />
       </div>
     </div>
