@@ -45,7 +45,7 @@ export const AppBar: Component = () => {
                 <Icon path={mdiMenu} size="1.5rem" />
               </button>
             </div>
-            <h2>Logo Dosel</h2>
+            <h2>Logo Doseur</h2>
 
             <div className="flex flex-row h-full mdml-4">
               {/* Routes */}
