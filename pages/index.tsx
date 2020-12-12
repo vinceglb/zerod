@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { GetServerSideProps, NextPage } from 'next'
+import { NextPage } from 'next'
 import { observer } from 'mobx-react-lite'
 import { SectionPref } from '../components/section/SectionPref'
 import { SectionMarket } from '../components/section/SectionMarket'
@@ -72,18 +72,3 @@ const IndexPage: NextPage<Props> = observer((/*{ launch }*/) => {
 })
 
 export default IndexPage
-
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const response = await fetch('https://api.spacexdata.com/v3/launches/next')
-  const nextLaunch = await response.json()
-  return {
-    props: {
-      launch: {
-        mission: nextLaunch.mission_name,
-        site: nextLaunch.launch_site.site_name_long,
-        timestamp: nextLaunch.launch_date_unix * 1000,
-        rocket: nextLaunch.rocket.rocket_name,
-      },
-    },
-  }
-}
