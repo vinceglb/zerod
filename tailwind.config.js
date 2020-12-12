@@ -14,10 +14,14 @@ module.exports = {
         'dark-grey': '#2C2B26',
         'light-grey': '#666666',
         'lighter-grey': '#EAEAEA',
+        'lightest-grey': '#FCFCFC',
         'reddish-brown': '#351E1D',
         'green': '#1DBF78',
         'light-transparent': '#F0F0F033'
       },
+      maxHeight: {
+        "1/2-screen": '50vh'
+      }
     },
   },
   variants: {

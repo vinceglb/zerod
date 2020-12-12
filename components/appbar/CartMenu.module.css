@@ -1,0 +1,12 @@
+/* Works on Chrome/Edge/Safari */
+.customScrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.customScrollbar::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 5px;
+}
+.customScrollbar::-webkit-scrollbar-thumb {
+  background-color: #888888;
+  border-radius: 5px;
+}

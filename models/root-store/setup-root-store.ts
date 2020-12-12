@@ -1,6 +1,7 @@
 // import { addMiddleware } from 'mobx-state-tree'
 import { RootStoreModel, RootStore } from './root-store'
 import makeInspectable from 'mobx-devtools-mst'
+import { ShopType } from '../shop'
 
 /**
  * Setup the root state.
@@ -10,7 +11,43 @@ export async function setupRootStore(): Promise<RootStore> {
   // let data: any
 
   // eslint-disable-next-line prefer-const
-  rootStore = RootStoreModel.create({})
+  rootStore = RootStoreModel.create({
+    cart: {
+      shop: {
+        id: 1,
+        name: 'Michel echoppe',
+        description: "Bienvenue dans l'échoppe de Michel !",
+        type: ShopType.EPICERIE,
+        photo: 'https://unsplash.com/photos/bqPXAXzRIsI/download?force=true&w=1920',
+      },
+      items: [
+        {
+          product: {
+            name: 'Carottes',
+            description: 'Botte de 10 carottes',
+            active: true,
+            price: 3.2,
+            photo: '/images/syauqy-ahmad-wHCe4X6Kvdo-unsplash.jpg',
+            tags: [],
+            id: 1,
+          },
+          quantity: 1,
+        },
+        {
+          product: {
+            name: 'Ail de Lautrec',
+            description: 'Le bon ail',
+            active: true,
+            price: 2.1,
+            photo: '/images/sean-bernstein-BdrrunAzTjQ-unsplash.jpg',
+            tags: [],
+            id: 2,
+          },
+          quantity: 4,
+        },
+      ],
+    },
+  })
   makeInspectable(rootStore)
 
   // mobx logging
