@@ -21,7 +21,9 @@ export const IndexSearch: React.FC<IndexSearchProps> = ({ className: custom }) =
             placeholder="Saisissez votre adresse"
           />
         </div>
-        <button className="bg-primary rounded-full p-3 text-white text-sm font-bold">
+
+        {/* Le -mr et le -my sont pour éviter des glitchs avec la bordure */}
+        <button className="bg-primary rounded-full p-3 text-white text-sm font-bold -mr-px -my-px">
           <Icon path={mdiMagnify} size="1.75rem" className="text-white" />
         </button>
       </div>
