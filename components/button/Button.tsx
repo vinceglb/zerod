@@ -18,6 +18,7 @@ export const Button: React.FC<ButtonProps> = ({
     className={`
       ${!text && 'bg-primary'}
       ${small ? 'py-2 px-6' : 'py-3 px-11 text-2xl'}
+      hover:bg-darker-primary
       rounded-full
       ${customClasses}
     `}
