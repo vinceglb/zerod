@@ -52,7 +52,7 @@ export const SectionEta: React.FC<SectionEtaProps> = (props) => {
         <p className="text-light-grey">Mais chuuut ne le dites à personne</p>
       </div>
 
-      <div className="mx-6 mt-4 space-y-4">
+      <div className="mx-6 mt-4 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {etas.map((eta) => (
           <CardEta key={eta.title} {...eta} />
         ))}
