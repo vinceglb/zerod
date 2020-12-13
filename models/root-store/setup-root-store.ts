@@ -1,6 +1,5 @@
 // import { addMiddleware } from 'mobx-state-tree'
 import { RootStoreModel, RootStore } from './root-store'
-import makeInspectable from 'mobx-devtools-mst'
 import { ShopType } from '../shop'
 
 /**
@@ -84,7 +83,9 @@ export async function setupRootStore(): Promise<RootStore> {
       ],
     },
   })
-  makeInspectable(rootStore)
+  if (process.env.NODE_ENV === 'development') {
+    import('mobx-devtools-mst').then((makeExecutable) => makeExecutable.default(rootStore))
+  }
 
   // mobx logging
   // if (__DEV__) {

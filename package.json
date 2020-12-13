@@ -17,7 +17,6 @@
     "@mdi/react": "^1.4.0",
     "autoprefixer": "^9",
     "mobx": "^6.0.4",
-    "mobx-devtools-mst": "^0.9.30",
     "mobx-react-lite": "^3.1.6",
     "mobx-state-tree": "^4.0.2",
     "next": "10.0.3",
@@ -29,6 +28,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "mobx-devtools-mst": "^0.9.30",
     "@storybook/addon-actions": "^6.1.10",
     "@storybook/addon-essentials": "^6.1.10",
     "@storybook/addon-links": "^6.1.10",
