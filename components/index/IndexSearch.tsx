@@ -1,5 +1,6 @@
 import { mdiMagnify, mdiMapMarker } from '@mdi/js'
 import Icon from '@mdi/react'
+import Link from 'next/link'
 
 export interface IndexSearchProps {
   hideTitle?: boolean | undefined
@@ -27,7 +28,9 @@ export const IndexSearch: React.FC<IndexSearchProps> = ({ hideTitle, className: 
 
         {/* Le -mr et le -my sont pour éviter des glitchs avec la bordure */}
         <button className="bg-primary rounded-full p-3 text-white text-sm font-bold -mr-px -my-px">
-          <Icon path={mdiMagnify} size="1.75rem" className="text-white" />
+          <Link href="/recherche">
+            <Icon path={mdiMagnify} size="1.75rem" className="text-white" />
+          </Link>
         </button>
       </div>
     </div>
