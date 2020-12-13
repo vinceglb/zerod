@@ -59,7 +59,7 @@ export const AppBar: Component = () => {
                           isActive
                             ? 'bg-primary text-white font-extrabold'
                             : 'text-reddish-brown font-medium hover:bg-secondary transition'
-                        } flex content-center items-center px-6 py-2 rounded-b-xl h-full text-md lg:text-lg cursor-pointer`}
+                        } flex content-center items-center px-6 py-2 rounded-b-xl h-full text-md lg:text-lg cursor-pointer transition`}
                       >
                         <div>{route.text}</div>
                       </div>
