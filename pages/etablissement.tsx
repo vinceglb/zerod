@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { SectionEtaCat } from '../components/section/SectionEtaCat'
+import { SectionEtaProduits } from '../components/section/SectionEtaProduits'
 import { BobPage } from '../utils/layout-types-next'
 
 interface EtablissementProps {}
@@ -33,7 +34,11 @@ const EtablissementPage: BobPage<EtablissementProps> = () => (
 
     {/* Partie de contenu */}
     <div className="px-6 mx-auto my-8 lg:w-lg">
+      <h2 className="font-bold text-center md:text-left text-reddish-brown text-2xl">
+        Choisissez le produit à ajouter au panier
+      </h2>
       <SectionEtaCat />
+      <SectionEtaProduits />
     </div>
   </>
 )

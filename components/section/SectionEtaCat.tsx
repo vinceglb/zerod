@@ -34,9 +34,6 @@ export const SectionEtaCat: React.FC<SectionEtaCatProps> = (props) => {
 
   return (
     <div className={props.className}>
-      <h2 className="font-bold text-center md:text-left text-reddish-brown text-2xl">
-        Choisissez le produit à ajouter au panier
-      </h2>
       <div className="mt-6 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {cats.map((cat) => (
           <CardEtaCat key={cat.title} {...cat} />
