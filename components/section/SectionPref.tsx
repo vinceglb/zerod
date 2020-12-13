@@ -1,4 +1,4 @@
-import { CardPref } from '../card/CardPref'
+import { CardPref, CardPrefProps } from '../card/CardPref'
 import stylesHelper from './helper.module.css'
 
 export interface SectionPrefProps {
@@ -6,7 +6,7 @@ export interface SectionPrefProps {
 }
 
 export const SectionPref: React.FC<SectionPrefProps> = (props) => {
-  const categories = [
+  const categories: CardPrefProps[] = [
     {
       title: 'Équilibré',
       photoUrl:
@@ -51,12 +51,7 @@ export const SectionPref: React.FC<SectionPrefProps> = (props) => {
       <div className="max-w-full flex overflow-auto mt-4">
         <div className="flex space-x-4">
           {categories.map((cat) => (
-            <CardPref
-              key={cat.title}
-              title={cat.title}
-              photoUrl={cat.photoUrl}
-              className={stylesHelper.container}
-            />
+            <CardPref key={cat.title} {...cat} className={stylesHelper.container} />
           ))}
         </div>
       </div>

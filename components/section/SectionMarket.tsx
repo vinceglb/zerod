@@ -1,4 +1,4 @@
-import { CardMarket } from '../card/CardMarket'
+import { CardMarket, CardMarketProps } from '../card/CardMarket'
 import stylesHelper from './helper.module.css'
 
 export interface SectionPrefProps {
@@ -6,7 +6,7 @@ export interface SectionPrefProps {
 }
 
 export const SectionMarket: React.FC<SectionPrefProps> = (props) => {
-  const markets = [
+  const markets: CardMarketProps[] = [
     {
       title: 'Épiceries',
       photoUrl:
@@ -32,13 +32,7 @@ export const SectionMarket: React.FC<SectionPrefProps> = (props) => {
       <div className="max-w-full flex overflow-auto py-2">
         <div className="flex space-x-8 lg:space-x-0 lg:w-full lg:justify-between">
           {markets.map((m) => (
-            <CardMarket
-              key={m.title}
-              title={m.title}
-              photoUrl={m.photoUrl}
-              desc={m.desc}
-              className={stylesHelper.container}
-            />
+            <CardMarket key={m.title} {...m} className={stylesHelper.container} />
           ))}
         </div>
       </div>
