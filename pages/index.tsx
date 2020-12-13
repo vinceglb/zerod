@@ -12,7 +12,7 @@ const IndexPage: BobPage<IndexProps> = () => (
     <div className="my-8 lg:w-lg mx-auto">
       <SectionMarket />
       <SectionPref className="mt-16" />
-      <SectionEta className="mt-16" />
+      <SectionEta className="mt-16 mx-6" />
     </div>
   </>
 )
