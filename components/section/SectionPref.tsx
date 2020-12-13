@@ -1,6 +1,5 @@
 import { CardPref } from '../card/CardPref'
 import stylesHelper from './helper.module.css'
-// import styles from './sectionpref.module.css'
 
 export interface SectionPrefProps {
   className?: string | undefined

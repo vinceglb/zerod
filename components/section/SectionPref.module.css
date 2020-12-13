@@ -1,7 +1,0 @@
-.container {
-  scroll-snap-type: x mandatory;
-}
-
-.item {
-  scroll-snap-align: center;
-}
