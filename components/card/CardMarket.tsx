@@ -1,13 +1,18 @@
 import Image from 'next/image'
 
-export interface CardProps {
+export interface CardMarketProps {
   title: string
   photoUrl: string
   desc: string
   className?: string | undefined
 }
 
-export const CardMarket: React.FC<CardProps> = ({ title, photoUrl, desc, className: custom }) => (
+export const CardMarket: React.FC<CardMarketProps> = ({
+  title,
+  photoUrl,
+  desc,
+  className: custom,
+}) => (
   <div className={custom}>
     <div className="bg-white rounded-xl shadow-md w-60 lg:w-72 p-4">
       <div className="rounded-lg h-32 lg:h-44 w-full relative overflow-hidden">
