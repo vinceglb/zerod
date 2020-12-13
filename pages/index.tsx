@@ -7,14 +7,14 @@ import { SectionEta } from '../components/section/SectionEta'
 interface IndexProps {}
 
 const IndexPage: BobPage<IndexProps> = () => (
-  <div>
+  <>
     <IndexHeader />
     <div className="my-8 lg:w-lg mx-auto">
       <SectionMarket />
       <SectionPref className="mt-16" />
       <SectionEta className="mt-16" />
     </div>
-  </div>
+  </>
 )
 
 export default IndexPage

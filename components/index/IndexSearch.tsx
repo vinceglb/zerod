@@ -2,14 +2,17 @@ import { mdiMagnify, mdiMapMarker } from '@mdi/js'
 import Icon from '@mdi/react'
 
 export interface IndexSearchProps {
+  hideTitle?: boolean | undefined
   className?: string | undefined
 }
 
-export const IndexSearch: React.FC<IndexSearchProps> = ({ className: custom }) => (
+export const IndexSearch: React.FC<IndexSearchProps> = ({ hideTitle, className: custom }) => (
   <div className={custom}>
     <div className="bg-white rounded-3xl shadow-xl p-5">
       {/* Titre */}
-      <p className="font-medium text-sm text-gray-400 mb-4">Trouver les commerces à proximité</p>
+      <p className={`font-medium text-sm text-gray-400 mb-4 ${hideTitle ? 'hidden' : ''}`}>
+        Trouver les commerces à proximité
+      </p>
 
       {/* Search field */}
       <div className="bg-light-secondary border-primary border-2 rounded-full flex flex-row items-center">

@@ -29,6 +29,7 @@ module.exports = {
       },
       height: {
         '4/5-screen': '80vh',
+        '1/2-screen': '50vh',
       },
       maxHeight: {
         '1/2-screen': '50vh',
