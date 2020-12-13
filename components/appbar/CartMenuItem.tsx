@@ -7,9 +7,9 @@ interface CartItemProps {
   item: CartItemModel
 }
 
-export const CartItem: React.FC<CartItemProps> = ({ item }) => {
+export const CartMenuItem: React.FC<CartItemProps> = ({ item }) => {
   return (
-    <div className="bg-white flex flex-row shadow-md p-2 rounded-xl">
+    <div className="bg-white flex flex-row shadow-custom p-2 rounded-xl">
       <div className="h-24 w-24 relative flex-shrink-0 mr-3">
         <Image
           className="rounded-xl"

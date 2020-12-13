@@ -33,8 +33,7 @@ const App: Component<BobAppProps> = ({ Component, pageProps }) => {
     // return <LoadingScreen />
     return <div>ca charge</div>
   }
-  console.log(Component)
-  console.log(pageProps)
+
   return (
     <RootStoreProvider value={rootStore}>
       <Layout>

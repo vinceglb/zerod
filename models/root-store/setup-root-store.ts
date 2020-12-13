@@ -45,6 +45,42 @@ export async function setupRootStore(): Promise<RootStore> {
           },
           quantity: 4,
         },
+        {
+          product: {
+            name: 'Ail de Lautrec',
+            description: 'Le bon ail',
+            active: true,
+            price: 2.1,
+            photo: '/images/sean-bernstein-BdrrunAzTjQ-unsplash.jpg',
+            tags: [],
+            id: 3,
+          },
+          quantity: 4,
+        },
+        {
+          product: {
+            name: 'Ail de Lautrec',
+            description: 'Le bon ail',
+            active: true,
+            price: 2.1,
+            photo: '/images/sean-bernstein-BdrrunAzTjQ-unsplash.jpg',
+            tags: [],
+            id: 4,
+          },
+          quantity: 4,
+        },
+        {
+          product: {
+            name: 'Ail de Lautrec',
+            description: 'Le bon ail',
+            active: true,
+            price: 2.1,
+            photo: '/images/sean-bernstein-BdrrunAzTjQ-unsplash.jpg',
+            tags: [],
+            id: 5,
+          },
+          quantity: 4,
+        },
       ],
     },
   })

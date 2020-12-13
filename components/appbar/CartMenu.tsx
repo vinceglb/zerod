@@ -5,7 +5,7 @@ import Icon from '@mdi/react'
 import { observer } from 'mobx-react-lite'
 import { useStores } from '../../models'
 import { Button } from '../button/Button'
-import { CartItem } from './CartItem'
+import { CartMenuItem } from './CartMenuItem'
 import styles from './CartMenu.module.css'
 import { useRouter } from 'next/router'
 
@@ -32,7 +32,7 @@ export const CartMenu: React.FC<CartMenu> = observer(({ className }) => {
       <div>
         <button
           className="max-w-xs bg-secondary text-primary rounded-full flex items-center text-sm p-3 hover:bg-primary hover:text-secondary transition focus:outline-none"
-          id="user-menu"
+          id="cart-menu"
           aria-haspopup="true"
           onClick={() =>
             window.innerWidth > 768 ? setDropDownMenuOpen(!dropDownMenuOpen) : router.push('/cart')
@@ -53,7 +53,6 @@ export const CartMenu: React.FC<CartMenu> = observer(({ className }) => {
           w-96
           rounded-2xl
           shadow-lg
-          p-3
           bg-lightest-grey
           ring-1
           ring-black
@@ -65,15 +64,13 @@ export const CartMenu: React.FC<CartMenu> = observer(({ className }) => {
         ref={dropdownRef}
       >
         {/* Articles */}
-        <div
-          className={`space-y-4 pb-2 max-h-1/2-screen pr-1 overflow-y-auto ${styles.customScrollbar}`}
-        >
+        <div className={`space-y-4 max-h-1/2-screen overflow-y-auto p-3 ${styles.customScrollbar}`}>
           {items.map((item) => (
-            <CartItem key={item.product.id} item={item} />
+            <CartMenuItem key={item.product.id} item={item} />
           ))}
         </div>
 
-        <div className="flex flex-row items-center justify-between mt-5">
+        <div className="flex flex-row items-center justify-between mt-5 p-3">
           <button
             className="whitespace-nowrap cursor-pointer text-sm font-semibold text-light-grey px-2 focus:outline-none"
             onClick={() => {
