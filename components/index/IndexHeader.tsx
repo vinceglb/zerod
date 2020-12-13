@@ -27,7 +27,7 @@ export const IndexHeader: NextPage<IndexHeader> = () => (
     <div className="w-full mt-16 mb-8 lg:my-0 lg:h-full">
       <div className="h-72 lg:h-full relative">
         <Image
-          src="/images/jimmy-dean-4ngFvOjh4TI-unsplash.jpg"
+          src="/images/accueil.jpg"
           alt="todo"
           priority={true}
           layout="fill"
