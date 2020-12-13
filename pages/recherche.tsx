@@ -16,7 +16,7 @@ const RecherchePage: BobPage<RechercheProps> = () => (
     </section>
 
     {/* Résultats de la recherche */}
-    <div className="mt-10 my-8 lg:w-lg mx-auto">
+    <div className="px-6 mx-auto my-8 lg:w-lg">
       <SectionEta />
     </div>
   </>
