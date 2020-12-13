@@ -15,7 +15,7 @@ export async function setupRootStore(): Promise<RootStore> {
   // eslint-disable-next-line prefer-const
   try {
     const data = localStorage.getItem(ROOT_STATE_STORAGE_KEY)
-    if (!data) throw 'Data does not exist'
+    if (!data || process.env.NODE_ENV === 'development') throw 'Data does not exist'
     rootStore = RootStoreModel.create(JSON.parse(data))
   } catch (e) {
     console.info('Local storage empty, mocking data')
