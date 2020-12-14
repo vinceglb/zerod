@@ -29,7 +29,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "mobx-devtools-mst": "^0.9.30",
-    "@storybook/addon-actions": "^6.1.10",
+    "@storybook/addon-actions": "^6.1.11",
     "@storybook/addon-essentials": "^6.1.10",
     "@storybook/addon-links": "^6.1.10",
     "@storybook/react": "^6.1.10",
